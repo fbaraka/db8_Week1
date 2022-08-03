@@ -13,27 +13,6 @@
  * Research formatted strings and right-align the numbers in columns instead of left-aligning them
  * Find out the maximum number whose cube will fit in an int, and limit the user input to that number or less
  * 
- * ~~~~~~~~~SAMPLE~~~~~~~~~~~~~~~~~~~~~~~~
- * 
- * Learn your squares and cubes!
-
-Enter an integer: {user input here, for example: 5}
-
-Number     	Squared       	Cubed
-=======  	=======		    ======
-1			1			    1
-2			4 			    8
-3         	9            	27
-4      		16          	64
-5           25          	125
-
-Continue? (y/n): {user input here, for example: Y}
-
-Enter an integer: ...
-*
-*
-*
-*
 */
 
 
@@ -44,28 +23,14 @@ Console.WriteLine("Learn your squares and cubes!");
 while (keepGoing)
 {
     bool validInt = false;
-
-    while (!validInt)
-    {
-        Console.Write("Enter an integer: ");
-        userInt = Convert.ToInt32(Console.ReadLine());
-
-        if (userInt > 0)
-        {
-
-            validInt = true;
-
-        }
-        else
-        {
-            Console.WriteLine("select a positive and non zero number!");
-        }
-
-    }
-
+    Console.Write("Enter an integer: ");
+    ValidateInput(ref userInt, ref validInt);
     SquareAndCubedTable(userInt);
     keepGoing = StartOver();
 }
+
+
+
 
 
 static void SquareAndCubedTable (int x)
@@ -95,3 +60,23 @@ static bool StartOver()
     }
 }
 
+static void ValidateInput(ref int userInt, ref bool validInt)
+{
+    while (!validInt)
+    {
+        Console.Write("Enter an integer: ");
+        userInt = Convert.ToInt32(Console.ReadLine());
+
+        if (userInt > 0)
+        {
+
+            validInt = true;
+
+        }
+        else
+        {
+            Console.WriteLine("select a positive and non zero number!");
+        }
+
+    }
+}

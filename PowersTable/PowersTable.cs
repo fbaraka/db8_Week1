@@ -34,46 +34,38 @@ Enter an integer: ...
 *
 *
 *
- */
+*/
 
 
 bool keepGoing = true;
-bool validInt = false;
-
+int userInt = 0;
 Console.WriteLine("Learn your squares and cubes!");
 
 while (keepGoing)
 {
+    bool validInt = false;
+
     while (!validInt)
     {
         Console.Write("Enter an integer: ");
-        int userInt = Convert.ToInt32(Console.ReadLine());
+        userInt = Convert.ToInt32(Console.ReadLine());
 
         if (userInt > 0)
         {
 
             validInt = true;
-            SquareAndCubedTable(userInt);
 
         }
         else
         {
-            validInt = false;
             Console.WriteLine("select a positive and non zero number!");
-            userInt = Convert.ToInt32(Console.ReadLine());
         }
 
-        
-
-        Console.WriteLine("Would you like to go again? (y/n)");
-        string cont = Console.ReadLine().ToLower();
-
-        StartOver(cont, out keepGoing);
     }
 
+    SquareAndCubedTable(userInt);
+    keepGoing = StartOver();
 }
-
-
 
 
 static void SquareAndCubedTable (int x)
@@ -87,16 +79,19 @@ static void SquareAndCubedTable (int x)
     }
 }
 
-static void StartOver(string x, out bool keepGoing)
+static bool StartOver()
 {
 
-    if (x[0] == 'n')
+    Console.WriteLine("Would you like to go again? (y/n)");
+    string cont = Console.ReadLine().ToLower();
+
+    if (cont[0] == 'n')
     {
-       keepGoing  = false;
+       return false;
     }
     else
     {
-        keepGoing = true;
+        return true;
     }
 }
 

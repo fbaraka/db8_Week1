@@ -121,9 +121,53 @@ static void NewMethod()
         Console.Write("Enter an integer between 1 and 100: ");
         int usersInt = Convert.ToInt32(Console.ReadLine());
 
-        IntValidator(usersInt);
-        ConditionalChecks(usersInt);
-        
+        bool validInt = true;
+
+        do
+        {
+            if (usersInt >= 1 && usersInt <= 100)
+            {
+                validInt = true;
+                Console.WriteLine("You entered " + usersInt);
+            }
+            else
+            {
+                Console.Write("oops, wrong number, please try again: ");
+                usersInt = Convert.ToInt32(Console.ReadLine());
+                validInt = false;
+
+            }
+        } while (!validInt);
+        if (usersInt % 2 != 0 && usersInt < 60) // TODO: If the integer entered is odd and less than 60, print the number entered and “Odd and less than 60.”
+        {
+            Console.WriteLine($"{usersInt} is Odd and less than 60.");
+
+        }
+        else if (usersInt % 2 == 0 && usersInt >= 2 && usersInt <= 25) // TODO: If the integer entered is even and in the inclusive range of 2 to 24, print “Even and less than 25.”
+        {
+            Console.WriteLine("Even and less than 25.");
+
+        }
+        else if (usersInt % 2 == 0 && usersInt >= 26 && usersInt <= 60) // TODO: If the integer entered is even and in the inclusive range of 26 to 60, print “Even and between 26 and 60 inclusive.”
+        {
+            Console.WriteLine("Even and between 26 and 60 inclusive.");
+
+        }
+        else if (usersInt % 2 == 0 && usersInt >= 60) // TODO: If the integer entered is even and greater than 60, print the number entered and “Even and greater than 60.”
+        {
+            Console.WriteLine($"{usersInt} is even and greater than 60.");
+
+        }
+        else if (usersInt % 2 != 0 && usersInt > 60) // TODO: If the integer entered is odd and greater than 60, print the number entered and “Odd and greater than 60.”
+        {
+            Console.WriteLine($"{usersInt} is odd and greater than 60");
+
+        }
+        else
+        {
+            Console.WriteLine("....something is wrong");
+        }
+
         do
         {
             Console.WriteLine("Would you like to go again? y/n : "); // Asking if the user wants to go again 
@@ -146,55 +190,4 @@ static void NewMethod()
 
 
 
-static void IntValidator(int input)
-{
-    bool validInt = true;
 
-    do
-    {
-        if (input >= 1 && input <= 100)
-        {
-            validInt = true;
-            Console.WriteLine("You entered " + input);
-        }
-        else
-        {
-            Console.Write("oops, wrong number, please try again: ");
-            input = Convert.ToInt32(Console.ReadLine());
-            validInt = false;
-
-        }
-    } while (!validInt);
-}
-static void ConditionalChecks(int x)
-{
-    if (x % 2 != 0 && x < 60) // TODO: If the integer entered is odd and less than 60, print the number entered and “Odd and less than 60.”
-    {
-        Console.WriteLine($"{x} is Odd and less than 60.");
-
-    }
-    else if (x % 2 == 0 && x >= 2 && x <= 25) // TODO: If the integer entered is even and in the inclusive range of 2 to 24, print “Even and less than 25.”
-    {
-        Console.WriteLine("Even and less than 25.");
-
-    }
-    else if (x % 2 == 0 && x >= 26 && x <= 60) // TODO: If the integer entered is even and in the inclusive range of 26 to 60, print “Even and between 26 and 60 inclusive.”
-    {
-        Console.WriteLine("Even and between 26 and 60 inclusive.");
-
-    }
-    else if (x % 2 == 0 && x >= 60) // TODO: If the integer entered is even and greater than 60, print the number entered and “Even and greater than 60.”
-    {
-        Console.WriteLine($"{x} is even and greater than 60.");
-
-    }
-    else if (x % 2 != 0 && x > 60) // TODO: If the integer entered is odd and greater than 60, print the number entered and “Odd and greater than 60.”
-    {
-        Console.WriteLine($"{x} is odd and greater than 60");
-
-    }
-    else
-    {
-        Console.WriteLine("....something is wrong");
-    }
-}

@@ -52,7 +52,7 @@ while (keepGoing)
 
 static int MakeRandomNum (int diceSides)
 {
-    Random rand = new Random(); // making an instane of Random to use later
+    Random rand = new Random(); // making an instance of Random to use later
     return rand.Next(1, diceSides + 1 ); // 1 is always the default and diceSides +1 will make the users choice inclusive
 }
 

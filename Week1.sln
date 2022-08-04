@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowersTable", "PowersTable\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDemo", "RandomDemo\RandomDemo.csproj", "{1C374D0E-5E10-413B-A75B-41540A12956D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRoller", "DiceRoller\DiceRoller.csproj", "{4FE06729-629D-4990-8899-C531CD7B0879}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{1C374D0E-5E10-413B-A75B-41540A12956D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C374D0E-5E10-413B-A75B-41540A12956D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C374D0E-5E10-413B-A75B-41540A12956D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FE06729-629D-4990-8899-C531CD7B0879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE06729-629D-4990-8899-C531CD7B0879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE06729-629D-4990-8899-C531CD7B0879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE06729-629D-4990-8899-C531CD7B0879}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
